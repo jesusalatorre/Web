@@ -58,7 +58,15 @@ app.get('/*', function(req, res){
   })
 })
 
-var local = '3000';
-app.listen(local, function(){
-  console.log('Listening on port 3000...')
+const port = process.env.PORT;
+
+if(typeof port != 'undefined'){
+app.listen(port, function(){
+  console.log('Listening on port ' + port + ' ...')
 })
+}
+else{
+  app.listen(3000, function(){
+    console.log('Listening on port 3000 ...')
+})
+}
