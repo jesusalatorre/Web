@@ -13,7 +13,7 @@ function updateTodo(id, completed) {
   };
   json_to_send = JSON.stringify(json_to_send);
   $.ajax({
-      url: 'http://localhost:3000/todos/' + id,
+      url: 'https://examenwebjesus.herokuapp.com/todos' + id,
       // url: 'https://tuapp.herokuapp.com/todos',
       headers: {
           'Content-Type':'application/json',
@@ -34,7 +34,7 @@ function updateTodo(id, completed) {
 
 function loadTodos() {
   $.ajax({
-    url: 'http://localhost:3000/todos',
+    url: 'https://examenwebjesus.herokuapp.com/todos',
     // url: 'https://tuapp.herokuapp.com/todos',
     headers: {
         'Content-Type':'application/json',
@@ -89,7 +89,7 @@ input.addEventListener('keypress', function (event) {
       data: json_to_send,
       success: function(data){
         console.log(data)
-        
+
       },
       error: function(error_msg) {
         alert((error_msg['responseText']));
@@ -100,5 +100,5 @@ input.addEventListener('keypress', function (event) {
 })
 
 function addTodo(id, todoText, completed) {
-  
+
 }
