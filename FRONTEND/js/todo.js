@@ -102,3 +102,12 @@ input.addEventListener('keypress', function (event) {
 function addTodo(id, todoText, completed) {
 
 }
+
+function crossoutHandler(checkbox) {
+  if(checkbox.checked == false){
+    document.getElementById("span"+checkbox.value).classList.remove("done");
+  }
+  else{
+    document.getElementById("span"+checkbox.value).classList.add("done");
+  }
+}
