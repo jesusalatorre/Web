@@ -11,7 +11,7 @@ $('#signup_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'http://localhost:3000/users',
+    url: 'https://examenwebjesus.herokuapp.com/
     // url: 'https://tuapp.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
