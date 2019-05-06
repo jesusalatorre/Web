@@ -26,6 +26,7 @@ $('#signup_button').on('click', function(){
     },
     error: function(error_msg) {
       alert((error_msg['responseText']));
+      console.log("No me funciono casi nada en este examen y va a parecer que no se nada de web :( ");
     }
   });
 
