@@ -1,7 +1,12 @@
 
 $('#signup_button').on('click', function(){
   // cargar los valores de password, email, name, age
-  json_to_send = {
+var email = document.querySelector('#email').value
+var name = document.querySelector('#name').value
+var age = document.querySelector('#age').value
+var password = document.querySelector('#password').value
+
+var  json_to_send = {
     "password" : password,
     "email": email,
     "name": name,
@@ -11,7 +16,7 @@ $('#signup_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'https://examenwebjesus.herokuapp.com/
+    url: 'https://examenwebjesus.herokuapp.com/users',
     // url: 'https://tuapp.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
@@ -26,7 +31,6 @@ $('#signup_button').on('click', function(){
     },
     error: function(error_msg) {
       alert((error_msg['responseText']));
-      console.log("No me funciono casi nada en este examen y va a parecer que no se nada de web :( ");
     }
   });
 

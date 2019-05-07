@@ -1,0 +1,73 @@
+{
+
+ "name": "Jon Snow",
+
+ "age": 20,
+
+ "born": "283",
+
+ "timeline": "AC",
+
+ "alliegance": [
+
+  "House Stark",
+
+  "The Night's Watch"
+
+ ],
+
+ "playedBy" : "Kit Harrington",
+
+ "titles": [
+
+  "Lord Commander of The Night's Watch",
+
+  "King of The North",
+
+  "Lord Crow"
+
+ ],
+
+ "father": "Ned Stark",
+
+        "mother": "unknown",
+
+        "spouse": ""
+
+},
+
+{
+
+ "name": "Eddard Stark",
+
+ "age": 35,
+
+ "born": "263",
+
+ "timeline": "AC",
+
+ "alliegance": [
+
+  "House Stark"
+
+ ],
+
+ "playedBy" : "Sean Bean",
+
+ "titles": [
+
+  "Lord of Winterfell",
+                "Warden of the North",
+                "Hand of the King"
+
+ ],
+
+ "father": "Rickard Stark",
+
+        "mother": "Lyarra Stark",
+
+        "spouse": "Catelyn Stark"
+
+
+
+}

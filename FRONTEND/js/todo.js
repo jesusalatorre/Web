@@ -3,7 +3,6 @@ if (token) {
   token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
 }
 
-
 var todos = document.querySelectorAll("input[type=checkbox]");
 
 function updateTodo(id, completed) {
@@ -50,6 +49,7 @@ function loadTodos() {
         console.log(data[i].description)
         // algo asi:
         // addTodo(data[i]._id, data[i].description, data[i].completed)
+        addTodo(data[i]._id, data[i].description, data[i].completed)
       }
     },
     error: function(error_msg) {
@@ -99,7 +99,39 @@ input.addEventListener('keypress', function (event) {
   }
 })
 
+
+var newTask = document.getElementById('newitem')
+var unfinished = document.getElementById("unfinished-list");
+var finished = document.getElementById("finished-list");
+var checkCounter=0;
+
 function addTodo(id, todoText, completed) {
+
+var newLi = document.createElement("li");
+var newIndex = document.createElement("input");
+
+newIndex.type = "checkbox";
+newIndex.name = "todo";
+
+checkCounter++;
+
+newIndex.value = checkCounter;
+newIndex.onchange = function(){
+  crossoutHandler(this);
+};
+
+var newSpan = document.createElement("span");
+newSpan.id="span"+checkCounter;
+var newTnode = document.createTextNode(todoText);
+newSpan.appendChild(newTnode);
+newLi.appendChild(newIndex);
+newLi.appendChild(newSpan);
+
+if(completed){
+  finished.appendChild(newLi);
+}else{
+  unfinished.appendChild(newLi);
+}
 
 }
 
