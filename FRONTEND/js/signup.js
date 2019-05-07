@@ -6,7 +6,7 @@ var name = document.querySelector('#name').value
 var age = document.querySelector('#age').value
 var password = document.querySelector('#password').value
 
-var  json_to_send = {
+var json_to_send = {
     "password" : password,
     "email": email,
     "name": name,

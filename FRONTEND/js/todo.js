@@ -6,7 +6,7 @@ if (token) {
 var todos = document.querySelectorAll("input[type=checkbox]");
 
 function updateTodo(id, completed) {
-  // revisen si completed es booleano o string
+  console.log(completed)
   json_to_send = {
     "completed" : completed
   };
@@ -89,7 +89,9 @@ input.addEventListener('keypress', function (event) {
       data: json_to_send,
       success: function(data){
         console.log(data)
-
+        new_list = ''
+        $("#unfinished-list").html(new_list)
+        loadTodos()
       },
       error: function(error_msg) {
         alert((error_msg['responseText']));
@@ -111,13 +113,18 @@ var newLi = document.createElement("li");
 var newIndex = document.createElement("input");
 
 newIndex.type = "checkbox";
+if(completed){
+  newIndex.checked = true;
+}else{
+  newIndex.checked = false;
+}
 newIndex.name = "todo";
 
 checkCounter++;
 
 newIndex.value = checkCounter;
 newIndex.onchange = function(){
-  crossoutHandler(this);
+  crossoutHandler(this, id);
 };
 
 var newSpan = document.createElement("span");
@@ -133,13 +140,17 @@ if(completed){
   unfinished.appendChild(newLi);
 }
 
+
+
 }
 
-function crossoutHandler(checkbox) {
+function crossoutHandler(checkbox, id) {
   if(checkbox.checked == false){
     document.getElementById("span"+checkbox.value).classList.remove("done");
+    updateTodo(id, false);
   }
   else{
     document.getElementById("span"+checkbox.value).classList.add("done");
+    updateTodo(id, true);
   }
 }
